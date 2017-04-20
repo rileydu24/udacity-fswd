@@ -24,11 +24,11 @@ class ForeignMovies(Media):
     country: where the movie is originally made from
     """
     def __init__(self, name, desc, pic, trailer, director, country):
-        super.__init__(name, desc, pic, trailer, director)
+        Media.__init__(self, name, desc, pic, trailer, director)
         self.country = country
     
     def toString(self):
-        print(self.name + " is originally directed by " + self.director +\
+        return (self.name + " is originally directed by " + self.director +\
         " in "+ self.country + ".")
 
 class TVShow(Media):
@@ -38,9 +38,9 @@ class TVShow(Media):
     episodes: number of episodes 
     """
     def __init__(self, name, desc, pic, trailer, director, episodes):
-        super.__init__(name, desc, pic, trailer, director)
+        Media.__init__(self, name, desc, pic, trailer, director)
         self.episodes = episodes
     
     def toString(self):
-        print(self.name + " is directed by " + self.director +\
+        return (self.name + " is directed by " + self.director +\
         " and it has "+ str(self.episodes) + ".")
